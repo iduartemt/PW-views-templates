@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Aluno, Curso, Professor
 
@@ -40,4 +40,16 @@ def alunos_view(request):
         request,
         'escola/alunos.html',
         {'alunos': alunos},
+    )
+
+
+def curso_view(request, id):
+    curso = get_object_or_404(
+        Curso.objects.select_related('professor').prefetch_related('alunos'),
+        id=id,
+    )
+    return render(
+        request,
+        'escola/curso.html',
+        {'curso': curso},
     )

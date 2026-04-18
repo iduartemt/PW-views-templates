@@ -127,6 +127,11 @@ article > section > ul > li {
     font-weight: 500;
 }
 
+article > section > ul > li a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
