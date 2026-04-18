@@ -6,12 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escola</title>
+    
+    <!-- link para ficheiro styles.css com regras de estilização -->
     {% load static %}
     <link rel="stylesheet" href="{% static 'escola/styles.css' %}">
 </head>
 <body>
     <header>
-        <h1>Escola</h1>
+        <h1>Es<span>cola</span></h1>
         <nav>
             <a href="{% url 'cursos' %}">Cursos</a>   
         </nav>

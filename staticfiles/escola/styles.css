@@ -25,6 +25,10 @@ body > header h1 {
     font-size: 26px;
 }
 
+body > header h1 span {
+    color: #2563eb;
+}
+
 body > header nav {
     margin-top: 10px;
 }
