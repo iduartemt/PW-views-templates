@@ -9,4 +9,16 @@ def cursos_view(request):
         .all()
     )
 
-    return render(request, 'escola/cursos.html', {'cursos': cursos})
+    cursos_com_imagem = []
+    for curso in cursos:
+        imagem = next(
+            (aluno.fotografia for aluno in curso.alunos.all() if aluno.fotografia),
+            None,
+        )
+        cursos_com_imagem.append({'curso': curso, 'imagem': imagem})
+
+    return render(
+        request,
+        'escola/cursos.html',
+        {'cursos_com_imagem': cursos_com_imagem},
+    )
